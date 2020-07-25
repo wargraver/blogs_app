@@ -1,0 +1,15 @@
+#header{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left:0px;
+    background-color: var(--light);
+}
+#Foot{
+    position: sticky;
+    bottom: 0px;
+    background-color: var(--light);
+}
+#cont{
+    padding-top:5%
+}

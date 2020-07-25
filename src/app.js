@@ -1,0 +1,10 @@
+const express=require('express')
+const app = express()
+const path=require('path')
+const { urlencoded } = require('express')
+const rout=require('express').Router()
+app.use(express.json())
+app.use(urlencoded({extended:true}))
+app.listen(3000,()=>{
+   console.log('server is deployed on prt 3000')
+})
