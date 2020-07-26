@@ -1,9 +1,12 @@
 const user=require('./db.js').user
+const post=require('./db.js').post
 const route=require('express').Router()
 route.get('/user',async (req,res)=>{
     try{
         console.log('hello')
-        var data=await user.findAll()
+        var data=await user.findAll({
+            include:post
+        })
         res.status(200).send(data)
     }
     catch(error){

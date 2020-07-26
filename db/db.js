@@ -39,7 +39,11 @@ const comment=db.define('comment',{
     }
 })
 user.hasMany(post)
-post.belongsTo(user)
+post.belongsTo(user,{
+    foreignKey:{
+        allowNull:false
+    }
+})
 
 user.hasMany(comment)
 comment.belongsTo(user)
