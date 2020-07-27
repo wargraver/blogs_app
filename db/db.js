@@ -23,6 +23,16 @@ const user=db.define('user',{
     name:{
         type:Sequelize.DataTypes.STRING(30),
         allowNull:false,
+    },
+    password:{
+        type:Sequelize.DataTypes.STRING(200),
+        allowNull:false,
+    }
+})
+const token=db.define('token',{
+    id:adid,
+    tok:{
+        type:Sequelize.DataTypes.STRING(200)
     }
 })
 const post=db.define('post',{
@@ -44,7 +54,12 @@ post.belongsTo(user,{
         allowNull:false
     }
 })
-
+user.hasMany(token)
+token.belongsTo(user,{
+    foreignKey:{
+        allowNull:false
+    }
+})
 user.hasMany(comment)
 comment.belongsTo(user)
 
@@ -56,8 +71,8 @@ db.sync({force:true})
      console.log("created db")
 })
 .catch((error)=>{
-     console.log("error")
+     console.log(error)
 })
 module.exports={
-    user,comment,post
+    user,comment,post,token
 }
