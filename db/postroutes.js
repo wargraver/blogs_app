@@ -1,7 +1,8 @@
 const post=require('./db.js').post
 const user=require('./db.js').user
 const route=require('express').Router()
-route.get('/post/:id',async (req,res)=>{
+const auth=require('./auth.js').auth
+route.get('/post/:id',auth,async (req,res)=>{
       try{
           const data=await post.findAll({where:{
               id:req.params.id
@@ -14,7 +15,7 @@ route.get('/post/:id',async (req,res)=>{
           })
       }
 })
-route.get('/post',async (req,res)=>{
+route.get('/post',auth,async (req,res)=>{
     try{
        const data=await post.findAll({include:user})
        res.status(200).send(data)
@@ -25,7 +26,7 @@ route.get('/post',async (req,res)=>{
         })
     }
 })
-route.post('/post',async (req,res)=>{
+route.post('/post',auth,async (req,res)=>{
     try{
         const data=await post.create({
             post:req.body.post,

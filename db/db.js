@@ -45,7 +45,7 @@ const post=db.define('post',{
 const comment=db.define('comment',{
     id:adid,
     comment:{
-        type:Sequelize.DataTypes.STRING(40)
+        type:Sequelize.DataTypes.STRING(200)
     }
 })
 user.hasMany(post)
@@ -61,7 +61,11 @@ token.belongsTo(user,{
     }
 })
 user.hasMany(comment)
-comment.belongsTo(user)
+comment.belongsTo(user,{
+    foreignKey:{
+        allowNull:false
+    }
+})
 
 post.hasMany(comment)
 comment.belongsTo(post)
