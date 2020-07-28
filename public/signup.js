@@ -14,10 +14,11 @@ $(function(){
     $('#add32').click(function(){
         console.log(email.val(),name.val(),password.val())
         signup(name.val(),password.val(),function(data){
-               window.alert('created the user')
-        })
-        window.localStorage.check='vbjkbksjkv'
+              // window.alert('created the user')
+               window.localStorage.check='vbjkbksjkv'
         console.log(window.localStorage)
+        window.location.replace('http://localhost:3000/login.html')
+        })
     }
     )
 })

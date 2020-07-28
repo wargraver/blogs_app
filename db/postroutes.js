@@ -30,7 +30,7 @@ route.post('/post',auth,async (req,res)=>{
     try{
         const data=await post.create({
             post:req.body.post,
-            userId:req.body.id
+            userId:req.user.id
         })
         res.status(200).send(data)
     }

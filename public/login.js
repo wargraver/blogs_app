@@ -17,7 +17,8 @@ $(function(){
            else{
            window.localStorage.tok=data.tok2
            console.log(window.localStorage)
-           window.alert('Succesfully loggedin')
+         //  window.alert('Succesfully loggedin')
+           window.location.replace('http://localhost:3000/post.html')
            }
        })
    })

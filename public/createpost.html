@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src='./login.js'></script>
+    <script src='./createpost.js'></script>
     <link rel="stylesheet" type="text/css" href="./nav.css">
     <title>Blogs</title>
 </head>
 <body>
     <div>
     <div id="Nav"><nav class="navbar navbar-expand-lg navbar-light bg-dark" id='header'>
-        <a class="navbar-brand text-white" href="http://localhost:3000/signup.html" id='cont'>Sign Up</a>
+        <a class="navbar-brand text-white" href="http://localhost:3000/post.html" id='cont'>All posts</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,20 +31,14 @@
       </div>
     <div id="log">
         <form class="ml-5 mr-5">
-            <div class="form-group row">
-              <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="email" placeholder="email@example.com">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Blog</span>
+                </div>
+                <textarea id='text'class="form-control" aria-label="With textarea"></textarea>
               </div>
-            </div>
-            <div class="form-group row">
-              <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-              <div class="col-sm-10">
-                <input type="password" class="form-control" id="password" placeholder="Password">
-              </div>
-            </div>
           </form>
-          <button type="button" class="btn btn-dark ml-5 mt-4" id="btn1">Login</button>
+          <button type="button" class="btn btn-dark ml-5 mt-4" id="btn1">Submit</button>
     </div>
     <div id="Foot">
         <nav class="navbar navbar-expand-lg navbar-light bg-dark" id='footer'>
