@@ -1,4 +1,4 @@
-#header{
+#Nav_signup{
     position: fixed;
     top: 0px;
     right: 0px;
@@ -6,13 +6,13 @@
     background-color: var(--light);
     z-index: 5;
 }
-#log{
+#Cont_signup{
     padding-top:17%;
     padding-left: 5%;
     padding-bottom: 21%;
     padding-right: 5%;
 }
-#Foot{
+#Foot_signup{
     position: sticky;
     bottom: 0px;
     background-color: var(--light);

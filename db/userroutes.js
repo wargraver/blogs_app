@@ -45,11 +45,20 @@ route.post('/user/signup',async(req,res)=>{
         res.status(200).send(data)
     }
     catch(error){
-        res.status(404).send({
+        res.status(400).send({
             error:"could not create new user"
         })
     }
 })
+/*route.get('/user/logout',auth,async(req,res)=>{
+      const user_data=await user.findAll({
+          where:{
+              id:req.user.id
+          }
+      })
+      console.log(user_data[0])
+
+})*/
 route.post('/user/login',async(req,res)=>{
     try{
     const str=req.body.password
@@ -89,6 +98,7 @@ route.post('/user/login',async(req,res)=>{
     catch(error){
         console.log(error)
         console.log('error to login')
+        res.status(500).send({error:"Something went wrong"})
     }
 })
 module.exports=route
